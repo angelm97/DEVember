@@ -1,21 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
+import DayListItem from './src/components/core/DayListItem';
 
 export default function App() {
-  const names = [
-    { name: 'angel', lastName: 'Meregildo' },
-    { name: 'LEo', lastName: 'Meregildo' },
-    { name: 'luna', lastName: 'Meregildo' },
-    { name: 'joan', lastName: 'Meregildo' },
-    { name: 'lopp', lastName: 'Meregildo' },
-    { name: 'nicole', lastName: 'Meregildo' }
-  ]
+  const days = [... Array(24)].map((val, index) => index +1)
 
-
-  console.log('arriba');
   return (
     <View style={styles.container}>
-      <Text>Hola mundo 2 </Text>
+
+      <FlatList
+        data={days}
+        contentContainerStyle={styles.content}
+        numColumns={2}
+        renderItem={({ item }) => (<DayListItem day={item} />)}
+      />
+
+
+
       <StatusBar style="auto" />
     </View>
   );
@@ -25,7 +26,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    paddingHorizontal: 10,
+    paddingTop: 50
+  }
+ 
 });
