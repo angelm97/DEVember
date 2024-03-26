@@ -6,6 +6,7 @@ import { AmaticSC_400Regular, AmaticSC_700Bold } from '@expo-google-fonts/amatic
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import DayListItem from '../components/core/DayListItem';
+import { Stack } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,7 +32,7 @@ export default function HomePage() {
 
   return (
     <View style={styles.container}>
-
+      <Stack.Screen options={{title: 'Devember'}} />
       <FlatList
         data={days}
       
