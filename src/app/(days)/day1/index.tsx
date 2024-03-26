@@ -4,9 +4,9 @@ import { Stack } from 'expo-router'
 
 export default function day1() {
   return (
-    <View>
+    <View style={{justifyContent:'center', alignItems: 'center'}}>
       <Stack.Screen options={{title: 'Day 1'}} />
-      <Text>day1</Text>
+      <Text style={{fontFamily: 'AmaticSC_700Bold', fontSize: 200}}>day1</Text>
     </View>
   )
 }
